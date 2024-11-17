@@ -22,14 +22,14 @@ const cardData = [
     title: "Insights and analytics",
     description:
       "Fast-track goals with advanced insights plus a dedicated customer success team to help drive effective learning.",
-    imageUrl: "/images/insights-analytics.png"
+    imageUrl: "/slide2.png"
   },
   {
     id: 4,
     title: "Customizable content",
     description:
       "Create tailored learning paths for team and organization goals and even host your own content and resources.",
-    imageUrl: "/images/customizable-content.png"
+    imageUrl: "/slide2.png"
   }
 ];
 
