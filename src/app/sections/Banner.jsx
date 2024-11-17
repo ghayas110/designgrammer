@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 const Banner = () => {
   const slides = [
     {
-      image: "/slide1.png",
+      image: "/slide2.png",
       title: "Empower Your Team",
       description:
         "Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.",
