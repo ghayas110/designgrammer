@@ -43,9 +43,9 @@ export default function Goals() {
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Learning focused on your goals
         </h2>
-        {cardData.map((card) => (
+        {cardData.map((card, index) => (
           <div
-            key={card.id}
+            key={index}
             className={`p-4 border rounded-lg cursor-pointer ${
               activeImage === card.imageUrl ? "border-purple-500" : "border-gray-300"
             }`}
