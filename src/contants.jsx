@@ -14,34 +14,35 @@ export const NAV_LINKS = [
       "logos": [
         {
           "name": "Volkswagen",
-          "imageUrl": "/images/volkswagen-logo.png",
+          "imageUrl": "/images/volkswagen-logo.svg",
           "altText": "Volkswagen Logo"
         },
         {
           "name": "Samsung",
-          "imageUrl": "/images/samsung-logo.png",
+          "imageUrl": "/images/samsung_logo.svg",
           "altText": "Samsung Logo"
         },
         {
           "name": "Cisco",
-          "imageUrl": "/images/cisco-logo.png",
+          "imageUrl": "/images/cisco-logo.svg",
           "altText": "Cisco Logo"
         },
         {
-          "name": "Vimeo",
-          "imageUrl": "/images/vimeo-logo.png",
-          "altText": "Vimeo Logo"
+          "name": "Volkswagen",
+          "imageUrl": "/images/volkswagen-logo.svg",
+          "altText": "Volkswagen Logo"
         },
         {
-          "name": "P&G",
-          "imageUrl": "/images/pg-logo.png",
-          "altText": "Procter and Gamble Logo"
+          "name": "Samsung",
+          "imageUrl": "/images/samsung_logo.svg",
+          "altText": "Samsung Logo"
         },
         {
-          "name": "Ericsson",
-          "imageUrl": "/images/ericsson-logo.png",
-          "altText": "Ericsson Logo"
-        }
+          "name": "Cisco",
+          "imageUrl": "/images/cisco-logo.svg",
+          "altText": "Cisco Logo"
+        },
+       
       ]
     
     
@@ -58,8 +59,8 @@ export const FOOTER_LINKS = [
   ];
   
   export const SOCIAL_LINKS = [
-    { name: "Facebook", href: "https://facebook.com", icon: "/path-to-facebook-icon.svg" },
-    { name: "Twitter", href: "https://twitter.com", icon: "/path-to-twitter-icon.svg" },
-    { name: "LinkedIn", href: "https://linkedin.com", icon: "/path-to-linkedin-icon.svg" },
+    { name: "Facebook", href: "https://facebook.com", icon: "/images/facebook.png" },
+    { name: "Twitter", href: "https://twitter.com", icon: "/images/twiter.png" },
+    { name: "LinkedIn", href: "https://linkedin.com", icon: "/images/in.png" },
   ];
   

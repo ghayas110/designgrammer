@@ -13,7 +13,8 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold">DesignGrammar</h2>
             <p className="mt-2 text-gray-400 max-w-sm">
-              Providing reliable and efficient government-related legal services, including NICOP registration, HEC attestation, and more.
+              Your go-to platform for learning and growth in the world of
+              technology and design.
             </p>
           </div>
 
