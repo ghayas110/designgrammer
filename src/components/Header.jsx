@@ -1,16 +1,24 @@
 "use client";
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+const router = useRouter();
   return (
     <header className="bg-white shadow-md  w-full z-10">
       <div className="container mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <div className="text-2xl font-bold text-black">
-          <a href="#">DesignGrammar</a>
-        </div>
+        <Link className="mb-5.5 inline-block " href="/">
+            <Image
+                  className=" dark:block"
+                  src={"/images/logos.png"}
+                  alt="Logo"
+                  width={76}
+                  height={32}
+                />
+              </Link>
 
         {/* Search Bar (hidden on small screens) */}
         <div className="hidden md:flex flex-grow mx-6">
@@ -28,17 +36,17 @@ export default function Header() {
 
         {/* Navigation */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="#" className="text-sm font-medium text-gray-700 hover:underline">
+          <div href="#" className="text-sm font-medium text-gray-700 hover:underline" onClick={() => router.push("/courses")}>
             Courses
-          </a>
+          </div>
           <a href="#" className="text-sm font-medium text-gray-700 hover:underline">
             Teach on DesignGrammar
           </a>
          
-          <button className="text-sm font-medium text-black hover:bg-gray-100 px-4 py-2 rounded-md border">
+          <button className="text-sm font-medium text-black hover:bg-gray-100 px-4 py-2 rounded-md border" onClick={() => router.push("/signin")}>
             Log in
           </button>
-          <button className="text-sm font-medium text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-md">
+          <button className="text-sm font-medium text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-md" onClick={() => router.push("/signup")}>
             Sign up
           </button>
         </div>
@@ -84,27 +92,11 @@ export default function Header() {
             <a href="#" className="text-sm font-medium text-gray-700 hover:underline">
               Teach on Udemy
             </a>
-            <a href="#" className="text-gray-700 flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h18M3 21h18m-5-18v18m-8 0v-18"
-                />
-              </svg>
-              Cart
-            </a>
-            <button className="w-full text-sm font-medium text-black hover:bg-gray-100 px-4 py-2 rounded-md border">
+         
+            <button className="w-full text-sm font-medium text-black hover:bg-gray-100 px-4 py-2 rounded-md border" onClick={() => router.push("/signin")}>
               Log in
             </button>
-            <button className="w-full text-sm font-medium text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-md">
+            <button className="w-full text-sm font-medium text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-md" onClick={() => router.push("/signup")}>
               Sign up
             </button>
           </div>

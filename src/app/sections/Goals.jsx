@@ -22,14 +22,14 @@ const cardData = [
     title: "Insights and analytics",
     description:
       "Fast-track goals with advanced insights plus a dedicated customer success team to help drive effective learning.",
-    imageUrl: "/slide2.png"
+    imageUrl: "/images/insights-analytics.jpg"
   },
   {
     id: 4,
     title: "Customizable content",
     description:
       "Create tailored learning paths for team and organization goals and even host your own content and resources.",
-    imageUrl: "/slide2.png"
+    imageUrl: "/images/customizable-content.jpg"
   }
 ];
 
@@ -43,9 +43,9 @@ export default function Goals() {
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Learning focused on your goals
         </h2>
-        {cardData.map((card, index) => (
+        {cardData.map((card) => (
           <div
-            key={index}
+            key={card.id}
             className={`p-4 border rounded-lg cursor-pointer ${
               activeImage === card.imageUrl ? "border-purple-500" : "border-gray-300"
             }`}
