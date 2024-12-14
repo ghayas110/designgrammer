@@ -17,7 +17,6 @@ const DashboardPage = () => {
             progress: 3,
             rating: 4.5,
             image: "https://via.placeholder.com/150",
-
             videoId: 1,
 
 
@@ -29,7 +28,6 @@ const DashboardPage = () => {
             progress: 25,
             rating: 5,
             image: "https://via.placeholder.com/150",
-
             videoId: 1,
 
         },
@@ -40,7 +38,6 @@ const DashboardPage = () => {
             progress: 16,
             rating: 3.5,
             image: "https://via.placeholder.com/150",
-
             videoId: 1,
 
         },
@@ -60,8 +57,6 @@ const DashboardPage = () => {
                 {filteredCourses.map((course) => (
 
                     <CourseCard key={course.id} course={course} videoId={course.videoId} />
-
-             
 
                 ))}
             </div>
