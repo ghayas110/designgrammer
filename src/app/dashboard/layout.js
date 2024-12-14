@@ -6,6 +6,7 @@ export default function DashboardLayout({ children }) {
     const pathname = usePathname();
 
     // Determine if we're in the course detail page or the main dashboard
+
     const pathSegments = pathname.split("/"); // Split path into segments
     
     const courseId = pathSegments[2]; // Extract courseId
@@ -22,10 +23,7 @@ export default function DashboardLayout({ children }) {
           ]
         : [
               { name: "All Courses", href: "/dashboard" },
-            //   { name: "My Lists", href: "/dashboard/lists" },
-            //   { name: "Wishlist", href: "/dashboard/wishlist" },
-            //   { name: "Archived", href: "/dashboard/archived" },
-            //   { name: "Learning Tools", href: "/dashboard/tools" },
+         
           ];
 
     return (

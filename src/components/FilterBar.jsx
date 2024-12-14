@@ -11,7 +11,8 @@ const FilterBar = ({ onSearch }) => {
                 <button className="border px-4 py-2 rounded-md">Instructor</button>
                 <button className="text-gray-500">Reset</button>
             </div>
-          
+      
+
         </div>
     );
 };

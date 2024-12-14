@@ -2,7 +2,9 @@
 "use client";
 import { useState } from "react";
 import FilterBar from "@/components/FilterBar";
+
 import CourseCard from "@/components/InsCourseCard";
+
 
 const DashboardPage = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -15,7 +17,10 @@ const DashboardPage = () => {
             progress: 3,
             rating: 4.5,
             image: "https://via.placeholder.com/150",
+
             videoId: 1,
+
+
         },
         {
             id: 2,
@@ -24,7 +29,9 @@ const DashboardPage = () => {
             progress: 25,
             rating: 5,
             image: "https://via.placeholder.com/150",
+
             videoId: 1,
+
         },
         {
             id: 3,
@@ -33,7 +40,9 @@ const DashboardPage = () => {
             progress: 16,
             rating: 3.5,
             image: "https://via.placeholder.com/150",
+
             videoId: 1,
+
         },
     ];
 
@@ -49,7 +58,11 @@ const DashboardPage = () => {
             {/* Course Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredCourses.map((course) => (
+
                     <CourseCard key={course.id} course={course} videoId={course.videoId} />
+
+                    <CourseCard key={course.id} course={course} />
+
                 ))}
             </div>
         </div>
