@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
 const Courses = () => {
+
+  const router = useRouter();
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
   const [activeAccordion, setActiveAccordion] = useState(null); // Track which accordion is open
   const courses = [
@@ -18,7 +20,7 @@ const Courses = () => {
       price: "$19.99",
       originalPrice: "$99.99",
       badge: "Bestseller",
-      image: "https://via.placeholder.com/150", // Replace with real image URLs
+      image: "https://letstalkscience.ca/sites/default/files/2021-01/Robot_thinking.jpg", // Replace with real image URLs
     },
     {
       id: 2,
@@ -32,7 +34,7 @@ const Courses = () => {
       level: "All Levels",
       price: "$22.99",
       originalPrice: "$109.99",
-      image: "https://via.placeholder.com/150", // Replace with real image URLs
+      image: "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1", // Replace with real image URLs
     },
   ];
 
@@ -116,12 +118,13 @@ const Courses = () => {
             {courses.map((course) => (
               <div
                 key={course.id}
-                className="bg-white shadow-md rounded-md overflow-hidden flex flex-row mt-10"
+                onClick={() => router.push(`/courses/${course.id}`)}
+                className="bg-white shadow-md rounded-md overflow-hidden flex flex-row mt-10 hover:shadow-lg cursor-pointer active:bg-gray-100"
               >
                 <img
                   src={course.image}
                   alt={course.title}
-                  className=" object-cover"
+                  className="w-40 h-40 object-cover"
                 />
                 <div className="p-4 flex-1 flex flex-col">
                   <h2 className="font-bold text-lg">{course.title}</h2>
@@ -150,14 +153,16 @@ const Courses = () => {
       <div>
       <div className="flex flex-row flex-wrap xl:hidden sm:block md:block">
             {courses.map((course) => (
-              <div
+              <div 
+              onClick={() => router.push(`/courses/${course.id}`)}
                 key={course.id}
-                className="bg-white shadow-md rounded-md overflow-hidden flex flex-row mt-10"
+                className="bg-white shadow-md rounded-md overflow-hidden flex flex-row mt-10 hover:shadow-lg cursor-pointer active:bg-gray-100"
+
               >
                 <img
                   src={course.image}
                   alt={course.title}
-                  className=" object-cover"
+                    className="w-40 h-100 object-cover"
                 />
                 <div className="p-4 flex-1 flex flex-col">
                   <h2 className="font-bold text-lg">{course.title}</h2>
