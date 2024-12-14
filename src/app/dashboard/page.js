@@ -61,7 +61,7 @@ const DashboardPage = () => {
 
                     <CourseCard key={course.id} course={course} videoId={course.videoId} />
 
-                    <CourseCard key={course.id} course={course} />
+             
 
                 ))}
             </div>
