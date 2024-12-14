@@ -3,7 +3,7 @@
 import { useState } from "react";
 import FilterBar from "@/components/FilterBar";
 
-import CourseCard from "@/components/InsCourseCard";
+import CourseCard from "@/components/CourseCard";
 
 
 const DashboardPage = () => {
