@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { getCourse } from "@/data/courses";
 
 export default function DashboardLayout({ children }) {
     const pathname = usePathname();
@@ -11,7 +12,7 @@ export default function DashboardLayout({ children }) {
     const pathSegments = pathname.split("/"); // Split path into segments
     const courseId = pathSegments[2]; // Extract courseId
     const isCourseDetail = pathname.startsWith(`/instructor/${courseId}`) && pathSegments.length === 4;
-    const title = isCourseDetail ? "Course Title" : "Instructor Portal"; // Replace "Course Title" dynamically
+    const title = isCourseDetail ? getCourse(courseId)?.title ?? "Course" : "Instructor Portal";
 
     // Instructor-specific menu
     const menuItems = isCourseDetail

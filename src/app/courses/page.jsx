@@ -1,51 +1,34 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { COURSES, getCertification, getCourseImage, getCourseStats } from "@/data/courses";
 const Courses = () => {
 
   const router = useRouter();
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
   const [activeAccordion, setActiveAccordion] = useState(null); // Track which accordion is open
-  const courses = [
-    {
-      id: 1,
-      title: "Machine Learning A-Z: AI, Python & R + ChatGPT Prize [2024]",
-      description:
-        "Learn to create Machine Learning Algorithms in Python and R from two Data Science experts.",
-      rating: 4.5,
-      reviews: 191363,
-      hours: "43 total hours",
-      lectures: "387 lectures",
-      level: "All Levels",
-      price: "$19.99",
-      originalPrice: "$99.99",
-      badge: "Bestseller",
-      image: "https://letstalkscience.ca/sites/default/files/2021-01/Robot_thinking.jpg", // Replace with real image URLs
-    },
-    {
-      id: 2,
-      title: "Python for Data Science and Machine Learning Bootcamp",
-      description:
-        "Learn how to use NumPy, Pandas, Seaborn, Matplotlib, Plotly, Tensorflow, and more!",
-      rating: 4.6,
-      reviews: 147103,
-      hours: "25 total hours",
-      lectures: "165 lectures",
-      level: "All Levels",
-      price: "$22.99",
-      originalPrice: "$109.99",
-      image: "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1", // Replace with real image URLs
-    },
-  ];
+  const courses = COURSES.map((course) => {
+    const { lectures, duration } = getCourseStats(course);
+    return {
+      ...course,
+      reviews: course.reviews.toLocaleString("en-US"),
+      hours: `${duration} total`,
+      lectures: `${lectures} video lectures`,
+      price: `$${course.price}`,
+      originalPrice: `$${course.originalPrice}`,
+      image: getCourseImage(course),
+      exam: getCertification(course).exam,
+    };
+  });
 
   const toggleAccordion = (accordion) => {
     setActiveAccordion(activeAccordion === accordion ? null : accordion);
   };
 
   return (
-    <div className="max-w-8xl mx-auto mt-12 h-screen px-20">
+    <div className="max-w-8xl mx-auto mt-12 min-h-screen px-20">
       {/* Header */}
-      <h1 className="text-xl font-bold mb-4">All Business Analytics & Intelligence courses</h1>
+      <h1 className="text-xl font-bold mb-4">All Oracle courses</h1>
 
       {/* Info Banner */}
       <div className="text-gray-700 text-sm p-3 rounded-md flex items-center mb-4">
@@ -112,7 +95,7 @@ const Courses = () => {
         <div className="flex flex-col flex-1">
         <div className=" flex flex-row justify-between flex-1 p-5">
         <p className="text-gray-500 text-sm mt-4 text-purple-900">Clear filters</p>
-          <p className="text-gray-500 text-sm mt-4">1 result</p>
+          <p className="text-gray-500 text-sm mt-4">{courses.length} results</p>
         </div>
         <div className="flex flex-row flex-wrap xl:block sm:hidden md:hidden">
             {courses.map((course) => (
@@ -134,6 +117,7 @@ const Courses = () => {
                       ⭐ {course.rating} ({course.reviews} reviews)
                     </p>
                     <p>{course.hours} • {course.lectures} • {course.level}</p>
+                    <p className="mt-1 text-gray-700">🎓 Prepares for Oracle exam {course.exam}</p>
                   </div>
                   <div className="mt-auto">
                     <p className="text-purple-700 font-bold text-lg">
@@ -172,6 +156,7 @@ const Courses = () => {
                       ⭐ {course.rating} ({course.reviews} reviews)
                     </p>
                     <p>{course.hours} • {course.lectures} • {course.level}</p>
+                    <p className="mt-1 text-gray-700">🎓 Prepares for Oracle exam {course.exam}</p>
                   </div>
                   <div className="mt-auto">
                     <p className="text-purple-700 font-bold text-lg">

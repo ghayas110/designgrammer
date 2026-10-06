@@ -11,7 +11,7 @@ export default function Footer() {
           
           {/* Logo and Description */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold">DesignGrammar</h2>
+            <h2 className="text-2xl font-bold">PrimeX Solution</h2>
             <p className="mt-2 text-gray-400 max-w-sm">
               Your go-to platform for learning and growth in the world of
               technology and design.
@@ -55,7 +55,7 @@ export default function Footer() {
 
         {/* Copyright Notice */}
         <div className="mt-8 text-center border-t border-gray-700 pt-4 text-gray-500">
-          © {new Date().getFullYear()} GovLawFirm. All rights reserved.
+          © {new Date().getFullYear()} PrimeX Solution. All rights reserved.
         </div>
       </div>
     </footer>

@@ -13,10 +13,10 @@ const router = useRouter();
         <Link className="mb-5.5 inline-block " href="/">
             <Image
                   className=" dark:block"
-                  src={"/images/logos.png"}
-                  alt="Logo"
-                  width={76}
-                  height={32}
+                  src={"/images/primex-logo.png"}
+                  alt="PrimeX Solution"
+                  width={116}
+                  height={48}
                 />
               </Link>
 
@@ -38,6 +38,9 @@ const router = useRouter();
         <div className="hidden md:flex items-center space-x-4">
           <div href="#" className="text-sm font-medium text-gray-700 hover:underline cursor-pointer" onClick={() => router.push("/courses")}>
             Courses
+          </div>
+          <div href="#" className="text-sm font-medium text-gray-700 hover:underline cursor-pointer" onClick={() => router.push("/certifications")}>
+            Certifications
           </div>
 
           <div href="#" className="text-sm font-medium text-gray-700 hover:underline cursor-pointer" onClick={() => router.push("/dashboard")}>
@@ -102,6 +105,9 @@ const router = useRouter();
           <div className="flex flex-col items-start space-y-4 px-6 py-4">
             <h2 onClick={() => router.push("/courses")} className="text-sm font-medium text-gray-700 hover:underline">
             Course
+            </h2>
+            <h2 onClick={() => router.push("/certifications")} className="text-sm font-medium text-gray-700 hover:underline">
+            Certifications
             </h2>
          
          

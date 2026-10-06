@@ -18,7 +18,7 @@ const InsCourseCard = ({ course }) => {
             />
             <h3 className="text-lg font-bold mt-4">{course.title}</h3>
             <p className="text-sm text-gray-600">Instructor: {course.instructor}</p>
-            <p className="text-sm text-gray-600">Progress: {course.progress}%</p>
+            <p className="text-sm text-gray-600">Students: {course.students.toLocaleString("en-US")}</p>
             <p className="text-sm text-gray-600">Rating: ⭐ {course.rating}</p>
             <button
                 className="mt-4 w-full bg-black text-white py-2 rounded-md"

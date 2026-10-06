@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getCourse } from "@/data/courses";
 
 export default function DashboardLayout({ children }) {
     const pathname = usePathname();
@@ -13,7 +14,7 @@ export default function DashboardLayout({ children }) {
     // const videoId = pathSegments[3]; // Extract videoId (if needed)
     // Dynamically set the title and menu based on the current page
     const isCourseDetail = pathname.startsWith(`/dashboard/${courseId}`);
-    const title = isCourseDetail ? "Course Title" : "My Learning"; // Replace "Course Title" dynamically
+    const title = isCourseDetail ? getCourse(courseId)?.title ?? "Course" : "My Learning";
     const menuItems = isCourseDetail
         ? [
               { name: "Lectures", href: `/dashboard/${courseId}/lectures`, icon: "🎥" },

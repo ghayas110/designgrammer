@@ -4,9 +4,9 @@ import { useState } from "react";
 export default function ManageStudents() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [students, setStudents] = useState([
-        { id: 1, name: "Alice Johnson", email: "alice@example.com", course: "Introduction to Programming" },
-        { id: 2, name: "Bob Smith", email: "bob@example.com", course: "Data Structures" },
-        { id: 3, name: "Charlie Brown", email: "charlie@example.com", course: "Machine Learning" },
+        { id: 1, name: "Alice Johnson", email: "alice@example.com", course: "Oracle SQL Fundamentals" },
+        { id: 2, name: "Bob Smith", email: "bob@example.com", course: "Oracle PL/SQL Programming" },
+        { id: 3, name: "Charlie Brown", email: "charlie@example.com", course: "Oracle Cloud Infrastructure (OCI) Foundations" },
     ]);
 
     const [newStudent, setNewStudent] = useState({ name: "", email: "", course: "" });

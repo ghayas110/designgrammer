@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
+import { COURSES } from "@/data/courses";
 
 export default function ManageCourses() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [courses, setCourses] = useState([
-        { id: 1, name: "Introduction to Programming", instructor: "John Doe", students: 50 },
-        { id: 2, name: "Data Structures", instructor: "Jane Smith", students: 40 },
-        { id: 3, name: "Machine Learning Basics", instructor: "Robert Brown", students: 30 },
-    ]);
+    const [courses, setCourses] = useState(
+        COURSES.map(({ id, title, instructor, students }) => ({ id, name: title, instructor, students }))
+    );
 
     const [newCourse, setNewCourse] = useState({ name: "", instructor: "", students: "" });
 

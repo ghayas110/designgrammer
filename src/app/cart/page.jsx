@@ -3,52 +3,26 @@ import CartItem from '@/components/Cartitems';
 import Link from 'next/link';
 // pages/cart.js
 import React, { useState } from 'react';
+import { getCourse, getCourseImage, getCourseStats } from '@/data/courses';
+
+const toCartItem = (course) => {
+    const { lectures, duration } = getCourseStats(course);
+    return {
+        ...course,
+        author: course.instructor,
+        image: getCourseImage(course),
+        duration,
+        lectures,
+    };
+};
 
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([
-        {
-            id: 1,
-            title: "Become a WordPress Developer: Unlocking Power With Code",
-            author: "Brad Schiff",
-            rating: 4.7,
-            reviews: 25526,
-            hours: 46,
-            lectures: 234,
-            level: "All Levels",
-            price: 22.99,
-            originalPrice: 129.99,
-            badge: "Bestseller",
-        },
-    ]);
+    const [cartItems, setCartItems] = useState([toCartItem(getCourse(1))]);
 
-    const [wishlist, setWishlist] = useState([
-        {
-            id: 2,
-            title: "The Complete Python Bootcamp From Zero to Hero in Python",
-            author: "Jose Portilla",
-            rating: 4.6,
-            reviews: 523686,
-            hours: 22,
-            lectures: 156,
-            level: "All Levels",
-            price: 12.99,
-            originalPrice: 74.99,
-            badge: null,
-        },
-        {
-            id: 3,
-            title: "C++: From Beginner to Expert",
-            author: "Arkadiusz Wlodarczyk",
-            rating: 4.3,
-            reviews: 10754,
-            hours: 18,
-            lectures: 104,
-            level: "All Levels",
-            price: 12.99,
-            originalPrice: 74.99,
-            badge: "Updated Recently",
-        },
-    ]);
+    const [wishlist, setWishlist] = useState([toCartItem(getCourse(2)), toCartItem(getCourse(4))]);
+
+    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    const originalTotal = cartItems.reduce((sum, item) => sum + item.originalPrice, 0);
 
     return (
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -61,7 +35,7 @@ const CartPage = () => {
             <h1 className="text-3xl font-bold">Shopping Cart</h1>
             {/* Cart Items */}
             <div>
-                <h2 className="text-xl font-semibold mt-6">1 Course in Cart</h2>
+                <h2 className="text-xl font-semibold mt-6">{cartItems.length} Course in Cart</h2>
                 {cartItems.map((item) => (
                     <CartItem key={item.id} item={item} />
                 ))}
@@ -79,8 +53,8 @@ const CartPage = () => {
         </div>
         <div className="p-6 bg-gray-100 rounded-md shadow-md">
         <h2 className="text-lg font-bold">Total:</h2>
-        <p className="text-2xl font-bold text-purple-600">$22.99</p>
-        <p className="text-sm text-gray-500 line-through">$129.99</p>
+        <p className="text-2xl font-bold text-purple-600">${total.toFixed(2)}</p>
+        <p className="text-sm text-gray-500 line-through">${originalTotal.toFixed(2)}</p>
      <Link href="/checkout">
         <button className="bg-purple-600 text-white py-2 px-4 rounded-md mt-4">
             Checkout

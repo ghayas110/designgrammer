@@ -6,7 +6,7 @@ export default function StudentList() {
     const [courses, setCourses] = useState([
         {
             id: 1,
-            name: "Introduction to Programming",
+            name: "Oracle SQL Fundamentals: Query Oracle Database Like a Pro",
             students: [
                 { id: 101, name: "Alice Johnson", email: "alice@example.com" },
                 { id: 102, name: "Bob Smith", email: "bob@example.com" },
@@ -14,7 +14,7 @@ export default function StudentList() {
         },
         {
             id: 2,
-            name: "Data Structures and Algorithms",
+            name: "Oracle PL/SQL Programming: From Blocks to Stored Procedures",
             students: [
                 { id: 103, name: "Charlie Brown", email: "charlie@example.com" },
                 { id: 104, name: "Diana Prince", email: "diana@example.com" },
@@ -22,7 +22,7 @@ export default function StudentList() {
         },
         {
             id: 3,
-            name: "Machine Learning Basics",
+            name: "Oracle Cloud Infrastructure (OCI) Foundations",
             students: [
                 { id: 105, name: "Evan Rogers", email: "evan@example.com" },
             ],

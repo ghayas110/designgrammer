@@ -3,39 +3,15 @@
 import { useState } from "react";
 import FilterBar from "@/components/FilterBar";
 import CourseCard from "@/components/InsCourseCard";
+import { COURSE_CATEGORIES, COURSES, getCourseImage } from "@/data/courses";
 
 const Instructor = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const courses = [
-        {
-            id: 1,
-            title: "Complete WordPress Course For Beginners",
-            instructor: "Ferdy Korpershoek",
-            progress: 3,
-            rating: 4.5,
-            image: "https://via.placeholder.com/150",
-            videoId: 1,
-        },
-        {
-            id: 2,
-            title: "The Complete Web Developer Course 3.0",
-            instructor: "Rob Percival",
-            progress: 25,
-            rating: 5,
-            image: "https://via.placeholder.com/150",
-            videoId: 1,
-        },
-        {
-            id: 3,
-            title: "React with Redux, React-Router, Hooks and Auth0",
-            instructor: "Mohammad Iqbal",
-            progress: 16,
-            rating: 3.5,
-            image: "https://via.placeholder.com/150",
-            videoId: 1,
-        },
-    ];
+    const courses = COURSES.map((course) => ({
+        ...course,
+        image: getCourseImage(course),
+    }));
 
     const filteredCourses = courses.filter((course) =>
         course.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -89,9 +65,9 @@ const Instructor = () => {
                                     </label>
                                     <select className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                                         <option>Select Category</option>
-                                        <option>Programming</option>
-                                        <option>Design</option>
-                                        <option>Marketing</option>
+                                        {COURSE_CATEGORIES.map((category) => (
+                                            <option key={category.id}>{category.label}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="flex justify-end">

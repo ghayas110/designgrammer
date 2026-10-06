@@ -28,10 +28,10 @@ const SignUp= () => {
               <Link className="mb-5.5 inline-block" href="/">
               <Image
                   className=" dark:block"
-                  src={"/images/logos.png"}
-                  alt="Logo"
+                  src={"/images/primex-logo.png"}
+                  alt="PrimeX Solution"
                   width={376}
-                  height={32}
+                  height={156}
                 />
               </Link>
             </div>
@@ -42,14 +42,14 @@ const SignUp= () => {
               <Link className="mb-5.5 inline-block xl:hidden" href="/">
             <Image
                   className=" dark:block"
-                  src={"/images/logos.png"}
-                  alt="Logo"
+                  src={"/images/primex-logo.png"}
+                  alt="PrimeX Solution"
                   width={176}
-                  height={32}
+                  height={73}
                 />
               </Link>
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-black sm:text-title-xl2">
-                Sign Up to DesignGrammar
+                Sign Up to PrimeX Solution
               </h2>
 
               <form onSubmit={handleSubmit}>

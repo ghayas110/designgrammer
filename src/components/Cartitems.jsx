@@ -4,7 +4,7 @@ const CartItem = ({ item }) => {
         <div className="flex items-center justify-between p-4 border-b">
             <div className="flex items-center">
                 <img
-                    src="https://via.placeholder.com/100"
+                    src={item.image}
                     alt={item.title}
                     className="w-24 h-24 object-cover rounded-md"
                 />
@@ -12,10 +12,10 @@ const CartItem = ({ item }) => {
                     <h3 className="text-lg font-bold">{item.title}</h3>
                     <p className="text-sm text-gray-500">By {item.author}</p>
                     <div className="text-sm text-yellow-500">
-                        {item.rating} ⭐ ({item.reviews} ratings)
+                        {item.rating} ⭐ ({item.reviews.toLocaleString("en-US")} ratings)
                     </div>
                     <p className="text-sm text-gray-500">
-                        {item.hours} total hours • {item.lectures} lectures • {item.level}
+                        {item.duration} total • {item.lectures} lectures • {item.level}
                     </p>
                 </div>
             </div>

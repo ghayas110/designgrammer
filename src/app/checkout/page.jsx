@@ -1,6 +1,10 @@
 // pages/checkout.js
 "use client";
 import React, { useState } from "react";
+import { getCourse, getCourseImage } from "@/data/courses";
+
+const course = getCourse(1);
+const discount = Math.round((1 - course.price / course.originalPrice) * 100);
 
 const CheckoutPage = () => {
     const [paymentMethod, setPaymentMethod] = useState("card");
@@ -101,18 +105,18 @@ const CheckoutPage = () => {
                     <div className="flex items-center justify-between p-4 border rounded-md mt-4">
                         <div className="flex items-center">
                             <img
-                                src="https://via.placeholder.com/80"
+                                src={getCourseImage(course)}
                                 alt="Course Thumbnail"
                                 className="w-16 h-16 object-cover rounded-md"
                             />
                             <div className="ml-4">
                                 <h3 className="text-lg font-bold">
-                                    Become a WordPress Developer: Unlocking Power With Code
+                                    {course.title}
                                 </h3>
-                                <p className="text-sm text-gray-500">$22.99</p>
+                                <p className="text-sm text-gray-500">${course.price}</p>
                             </div>
                         </div>
-                        <p className="text-lg font-bold text-gray-800">$22.99</p>
+                        <p className="text-lg font-bold text-gray-800">${course.price}</p>
                     </div>
                 </div>
             </div>
@@ -123,16 +127,16 @@ const CheckoutPage = () => {
                 <div className="mb-4">
                     <div className="flex justify-between text-sm">
                         <span>Original Price:</span>
-                        <span>$129.99</span>
+                        <span>${course.originalPrice}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                        <span>Discounts (82% Off):</span>
-                        <span>-$107.00</span>
+                        <span>Discounts ({discount}% Off):</span>
+                        <span>-${(course.originalPrice - course.price).toFixed(2)}</span>
                     </div>
                 </div>
                 <div className="flex justify-between text-lg font-bold mb-6">
                     <span>Total (1 course):</span>
-                    <span>$22.99</span>
+                    <span>${course.price}</span>
                 </div>
                 <button className="bg-purple-600 text-white py-2 px-4 rounded-md w-full">
                     Complete Checkout
